@@ -54,7 +54,23 @@ export default function Navbar() {
 
           {/* MOBILE MENU BUTTON */}
           <button className="md:hidden" onClick={() => setOpen(true)}>
-            <Menu size={28} />
+            <svg
+              stroke="currentColor"
+              fill="none"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              className="w-8 h-8 text-black cursor-pointer"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
           </button>
         </div>
       </nav>
@@ -62,43 +78,46 @@ export default function Navbar() {
       {/* OVERLAY */}
       {open && (
         <div
-          className="fixed inset-0 bg-black/40 z-40"
+          className="fixed inset-0 bg-black/20 z-40"
           onClick={() => setOpen(false)}
         />
       )}
 
-      {/* SIDEBAR */}
-      <div
-        className={`fixed top-0 right-0 h-full w-[75%] max-w-xs bg-white z-50 p-6 transform ${
-          open ? "translate-x-0" : "translate-x-full"
-        } transition-transform duration-300`}
-      >
-        {/* CLOSE BUTTON */}
-        <div className="flex justify-end mb-6">
-          <button onClick={() => setOpen(false)}>
-            <X />
-          </button>
-        </div>
+      {/* FLOATING SIDEBAR */}
+      {open && (
+        <div className="fixed top-20 right-4 z-50">
+          {/* CARD */}
+          <div className="bg-white w-64 rounded-2xl shadow-xl p-6">
+            {/* CLOSE BUTTON */}
+            <div className="flex justify-end mb-4">
+              <button onClick={() => setOpen(false)}>
+                <X />
+              </button>
+            </div>
 
-        {/* NAV ITEMS */}
-        <div className="flex flex-col gap-5 text-lg font-medium">
-          {navItems.map((item, idx) => (
-            <a
-              key={idx}
-              href={`#${item.href}`}
-              onClick={() => {
-                setActive(item.title);
-                setOpen(false);
-              }}
-              className={`${
-                active === item.title ? "text-blue-600" : "text-gray-800"
-              }`}
-            >
-              {item.title}
-            </a>
-          ))}
+            {/* NAV ITEMS */}
+            <div className="flex flex-col gap-4 text-base font-medium">
+              {navItems.map((item, idx) => (
+                <a
+                  key={idx}
+                  href={`#${item.href}`}
+                  onClick={() => {
+                    setActive(item.title);
+                    setOpen(false);
+                  }}
+                  className={`${
+                    active === item.title
+                      ? "text-blue-600 font-semibold border-b border-blue-600 w-fit"
+                      : "text-gray-800"
+                  }`}
+                >
+                  {item.title}
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 }
