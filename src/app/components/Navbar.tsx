@@ -23,6 +23,7 @@ export default function Navbar() {
       <nav className="w-full bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           <img
+            loading="lazy"
             src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/logo.webp"
             className="h-10"
             alt="logo"

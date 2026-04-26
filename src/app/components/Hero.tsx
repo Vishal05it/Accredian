@@ -66,6 +66,7 @@ export default function Hero() {
               src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/corporate-big-hero-v4.webp"
               alt="professionals"
               width={450}
+              loading="lazy"
               height={450}
               className="object-contain"
             />

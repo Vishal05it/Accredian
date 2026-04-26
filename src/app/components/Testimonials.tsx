@@ -20,14 +20,11 @@ export default function Testimonials() {
       text: "Choosing Accredian for the learning & development of our employees was a beneficial decision. The value derived from the course is immense & their support team is always there to help our employees.",
     },
   ];
-
-  // show 2 cards at a time
   const visible = testimonials.slice(index, index + 2);
 
   return (
     <section id="testimonialSect" className="w-full bg-white py-20">
       <div className="max-w-7xl mx-auto px-6 text-center">
-        {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
           Testimonials from <span className="text-blue-600">Our Partners</span>
         </h2>
@@ -35,21 +32,22 @@ export default function Testimonials() {
         <p className="mt-3 text-gray-600">
           What <span className="text-blue-600">Our Clients</span> Are Saying
         </p>
-
-        {/* Cards */}
         <div className="mt-12 grid md:grid-cols-2 gap-6">
           {visible.map((item, i) => (
             <div key={i} className="border rounded-xl p-6 text-left shadow-sm">
               <div className="w-16 h-16 relative mb-4">
-                <img src={item.logo} alt="logo" className="object-contain" />
+                <img
+                  src={item.logo}
+                  loading="lazy"
+                  alt="logo"
+                  className="object-contain"
+                />
               </div>
 
               <p className="text-gray-700 leading-relaxed">"{item.text}"</p>
             </div>
           ))}
         </div>
-
-        {/* Dots */}
         <div className="mt-6 flex justify-center gap-2">
           {[0, 1].map((dot) => (
             <button

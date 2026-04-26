@@ -50,35 +50,27 @@ export default function EnquiryModal() {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center text-black">
-      {/* OVERLAY (BACKGROUND) */}
       <div
         className="absolute inset-0 bg-black/40"
         onClick={() => setOpen(false)}
       />
-
-      {/* MODAL */}
       <div className="relative bg-white rounded-xl w-[90%] max-w-4xl flex overflow-hidden z-10">
-        {/* CLOSE BUTTON */}
         <button
           onClick={() => setOpen(false)}
           className="absolute top-4 right-4"
         >
           <X />
         </button>
-
-        {/* LEFT IMAGE */}
         <div className="hidden md:block w-1/2 relative">
           <img
+            loading="lazy"
             src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/business-v2.webp"
             alt="office"
             className="w-full h-full object-cover"
           />
         </div>
-
-        {/* RIGHT FORM */}
         <div className="w-full md:w-1/2 p-6">
           <h2 className="text-xl font-semibold mb-4">Enquire Now</h2>
-
           <form
             onSubmit={async (e) => {
               e.preventDefault();
@@ -160,7 +152,6 @@ export default function EnquiryModal() {
               placeholder="Eg: Gurgaon, Delhi, India"
               className="w-full border-b py-2 outline-none"
             />
-
             <button className="w-full bg-blue-600 text-white py-2 rounded-lg mt-4">
               Submit
             </button>

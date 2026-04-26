@@ -24,7 +24,7 @@ export default function Partners() {
               key={index}
               className="relative w-25 h-16 flex items-center gap-8 opacity-80 hover:grayscale-0 hover:opacity-100 transition"
             >
-              <img src={logo} alt="partner" className="object-contain" />
+              <img loading="lazy" src={logo} alt="partner" className="object-contain" />
             </div>
           ))}
         </div>

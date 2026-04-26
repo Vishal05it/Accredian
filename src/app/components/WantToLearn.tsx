@@ -9,6 +9,7 @@ export default function WantToLearn() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="relative overflow-hidden rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 px-8 py-16 bg-blue-600">
           <img
+            loading="lazy"
             src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/cta-circle.svg"
             alt="background pattern"
             className="object-cover z-10 absolute h-150 right-[15%] top-[1%]  opacity-100"

@@ -42,6 +42,7 @@ export default function WhoShouldJoin() {
               <img
                 src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/imagehuman.png"
                 width={300}
+                loading="lazy"
                 height={300}
                 className="object-contain"
               />

@@ -41,7 +41,12 @@ export default function CourseSegmentation() {
               className="bg-gray-50 font-bold rounded-xl shadow-md overflow-hidden transition hover:shadow-xl hover:-translate-y-1"
             >
               <div className="relative overflow-hidden w-full h-40">
-                <img src={item.img} alt={item.title} className="object-cover" />
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  loading="lazy"
+                  className="object-cover"
+                />
               </div>
               <div className="p-5">
                 <h3 className="text-blue-600 font-extrabold text-lg">

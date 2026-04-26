@@ -14,6 +14,7 @@ export default function CatFramework() {
             src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/catV2.svg"
             alt="CAT Framework"
             width={1000}
+            loading="lazy"
             height={400}
             className="rounded-2xl object-contain"
           />
