@@ -30,6 +30,18 @@ export default function EnquiryModal() {
       });
       let storedData = await response.json();
       console.log(storedData);
+      if (storedData.success) {
+        setForm({
+          name: "",
+          email: "",
+          phoneNo: 0,
+          companyName: "",
+          domain: "",
+          candidates: 0,
+          modeOfDelivery: "",
+          example: "",
+        });
+      }
     } catch (error) {
       console.log(error);
     }
