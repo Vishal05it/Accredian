@@ -20,17 +20,13 @@ export default function Navbar() {
 
   return (
     <>
-      {/* NAVBAR */}
       <nav className="w-full bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-          {/* LOGO */}
           <img
             src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/logo.webp"
             className="h-10"
             alt="logo"
           />
-
-          {/* DESKTOP NAV */}
           <div className="hidden md:flex items-center gap-8 text-sm font-medium">
             {navItems.map((item, idx) => (
               <a
@@ -51,8 +47,6 @@ export default function Navbar() {
               </a>
             ))}
           </div>
-
-          {/* MOBILE MENU BUTTON */}
           <button className="md:hidden" onClick={() => setOpen(true)}>
             <svg
               stroke="currentColor"
@@ -74,28 +68,20 @@ export default function Navbar() {
           </button>
         </div>
       </nav>
-
-      {/* OVERLAY */}
       {open && (
         <div
           className="fixed inset-0 bg-black/20 z-40"
           onClick={() => setOpen(false)}
         />
       )}
-
-      {/* FLOATING SIDEBAR */}
       {open && (
         <div className="fixed top-20 right-4 z-50">
-          {/* CARD */}
           <div className="bg-white w-64 rounded-2xl shadow-xl p-6">
-            {/* CLOSE BUTTON */}
             <div className="flex justify-end mb-4">
               <button onClick={() => setOpen(false)}>
-                <X />
+                <X className="text-black" />
               </button>
             </div>
-
-            {/* NAV ITEMS */}
             <div className="flex flex-col gap-4 text-base font-medium">
               {navItems.map((item, idx) => (
                 <a
